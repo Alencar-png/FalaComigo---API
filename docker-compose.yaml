@@ -1,0 +1,14 @@
+name: FalaComigo
+services:
+  postgres:
+    image: postgres:16 
+    container_name: falacomigo_postgres
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+
+networks:
+  default:
+    driver: bridge
